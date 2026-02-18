@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="card">
+    <h2>Verify OTP</h2>
+    <form method="post" class="form-grid">
+        <label for="phone_number">Mobile Number</label>
+        <input id="phone_number" name="phone_number" required />
+
+        <label for="otp">OTP</label>
+        <input id="otp" name="otp" required />
+
+        <button type="submit">Verify & Login</button>
+    </form>
+</section>
+{% endblock %}
