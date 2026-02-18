@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniCore AI Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+    <header class="topbar">
+        <h1>UniCore AI</h1>
+        {% if session.get('student_id') %}
+            <a class="btn-link" href="{{ url_for('auth.logout') }}">Logout</a>
+        {% endif %}
+    </header>
+
+    <main class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-list">
+                    {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    {% if session.get('student_id') %}
+    <button id="chat-toggle" class="chat-toggle">💬</button>
+    <section id="chat-widget" class="chat-widget hidden" aria-label="VCSM Bot">
+        <div class="chat-header">VCSM Bot</div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-form">
+            <input id="chat-input" type="text" placeholder="Ask about timetable..." autocomplete="off" />
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    {% endif %}
+</body>
+</html>

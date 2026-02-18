@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="card">
+    <h2>OTP Login</h2>
+    <p>Enter your college-registered mobile number to receive OTP.</p>
+    <form method="post" class="form-grid">
+        <label for="phone_number">Mobile Number</label>
+        <input id="phone_number" name="phone_number" placeholder="10-digit number" required />
+        <button type="submit">Send OTP</button>
+    </form>
+</section>
+{% endblock %}

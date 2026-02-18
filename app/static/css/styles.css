@@ -1,0 +1,151 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --primary: #2563eb;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.2rem;
+    background: var(--card);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+    max-width: 920px;
+    margin: 1.2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.08);
+}
+
+.form-grid {
+    display: grid;
+    gap: 0.6rem;
+}
+
+input, button {
+    padding: 0.65rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+button {
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem;
+}
+
+.flash-list {
+    list-style: none;
+    padding: 0;
+}
+
+.flash {
+    margin-bottom: 0.6rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+}
+
+.flash.success { background: #dcfce7; }
+.flash.error { background: #fee2e2; }
+.flash.info { background: #dbeafe; }
+
+.chat-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.chat-widget {
+    position: fixed;
+    right: 20px;
+    bottom: 86px;
+    width: 320px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.chat-widget.hidden {
+    transform: translateY(16px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chat-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.75rem;
+    font-weight: bold;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 0.75rem;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+.chat-form {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.65rem;
+    background: #fff;
+}
+
+.bubble {
+    max-width: 85%;
+    margin: 0.35rem 0;
+    padding: 0.5rem 0.65rem;
+    border-radius: 11px;
+    line-height: 1.35;
+    white-space: pre-line;
+}
+
+.bubble.user {
+    margin-left: auto;
+    background: #dbeafe;
+}
+
+.bubble.bot {
+    margin-right: auto;
+    background: #e2e8f0;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--primary);
+}
