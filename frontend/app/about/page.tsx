@@ -1,0 +1,1 @@
+export default function About() { return <div className="container-wrap py-12"><h1 className="text-3xl font-bold">About VCSM</h1><p className="mt-3">Valluvar College of Science and Management is focused on industry-ready education.</p></div>; }
